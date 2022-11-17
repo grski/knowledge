@@ -109,6 +109,43 @@ You get the idea. All of this takes time at least the memory allocation process 
 
 Last one is obviously our Trajan horse - template string which is the slowest and should be avoided unless for some reason desirable.
 
+## Example 
+
+First iteration that comes to mind but is a bit less Pythonic:
+
+```python
+msg = "" 
+for key, enduser in arPfEu:    
+    count = self.getEMUser(enduser.pfeu_email)
+    if count > 0:        
+        strEmail = gettext("* The email {user_name} is already in X").format(user_name = enduser.pfeu_email)        
+        msg = msg + strEmail + '<br/>' 
+```
+
+Can be improved to:
+```python
+msg = []
+for key, enduser in arPfEu:
+    count = self.getEMUser(enduser.pfeu_email)
+    if count > 0:
+        strEmail = gettext("* The email {user_name} is already in X DB").format(user_name = enduser.pfeu_email)
+		strEmail += '<br/>'
+        msg.append(strEmail) 
+ 
+final_message = ''.join(msg)
+```
+
+Which then boils down to:
+```python
+final_message = ''.join(
+     gettext("* The email {user_name} is already in X DB <br/>").format(user_name=end_user.pfeu_email)
+    for _, end_user in arPfEu if self.getEMUser(end_user.pfeu_email)
+)
+
+```
+
+
+
 ## Summary
 
 In Python, most of the time, mechanisms that look elegant in a particular situation, are almost for sure optimized for it, that's why you ought to use them. I love this snake. Elegant code that also is the fastest option available most of the time. Nice. If there are a lot of strings you ought to join in a predictable manner - use join. In most of the other cases, use f-strings where you can, enjoy your life.
