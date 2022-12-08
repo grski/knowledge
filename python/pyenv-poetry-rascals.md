@@ -136,7 +136,7 @@ Anyhow. So we have pyenv-virtualenv which is a virtualenv-like wrapper for pyenv
 
 So we have wrapper of a wrapper working on a wrapper of a wrapper. Wrapper-ception.
 
-[![asciicast](https://asciinema.org/a/itQgFoD819Y8w8GX8vNvynwGi.svg)](https://asciinema.org/a/itQgFoD819Y8w8GX8vNvynwGi)
+[![asciicast](https://asciinema.org/a/pMssjDmLN79NuJT8rr2VQg6GW.svg)](https://asciinema.org/a/pMssjDmLN79NuJT8rr2VQg6GW)
 
 ### Short how-to
 
