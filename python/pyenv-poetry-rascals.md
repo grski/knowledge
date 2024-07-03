@@ -152,3 +152,7 @@ So we have wrapper of a wrapper working on a wrapper of a wrapper. Wrapper-cepti
 
 If your project is simple enough or you do not want to be bother will all of the previous things you can use pip-tools to pin your dependencies and all that. 
 
+
+## Rye
+New kind on the block by the authors of Ruff. Cool stuff. Go check it out!
+it's like poetry with less fat more muscle. 
